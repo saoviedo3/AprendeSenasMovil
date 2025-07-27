@@ -228,8 +228,9 @@ class DetectionFragment : Fragment(R.layout.fragment_detection) {
                 .also { it.setSurfaceProvider(previewView.surfaceProvider) }
 
             // 2) ML Kit
+            val modelFile = com.espe.aprendesenasv1.ModelSelector.getModelFile(targetSign)
             val localModel = LocalModel.Builder()
-                .setAssetFilePath("model_meta.tflite")
+                .setAssetFilePath(modelFile)
                 .build()
             val options = CustomObjectDetectorOptions.Builder(localModel)
                 .setDetectorMode(CustomObjectDetectorOptions.STREAM_MODE)
