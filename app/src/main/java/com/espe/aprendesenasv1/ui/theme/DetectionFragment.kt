@@ -185,7 +185,7 @@ class DetectionFragment : Fragment(R.layout.fragment_detection) {
 
         // Configuramos el título y el mensaje
         builder.setTitle("Instrucciones")
-            .setMessage("Para realizar la seña, asegúrate de estar en un lugar con buena iluminación y un fondo blanco.")
+            .setMessage("Para realizar la seña, asegúrese de estar en un lugar con buena iluminación y un fondo blanco despejado.")
 
         // Agregamos el botón de Aceptar
         builder.setPositiveButton("Aceptar") { dialog, _ ->
