@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Inicio"
+        android:textStyle ="italic" />
+    <item
+        android:id="@+id/conoceMasFragment"
+        android:icon="@drawable/outline_document_search_24"
+        android:title="Conoce Más"
+        />
+    <item
+        android:id="@+id/lettersFragment"
+        android:icon="@drawable/outline_abc_24"
+        android:title="Abecedario"
+        />
+    <item
+        android:id="@+id/numbersFragment"
+        android:icon="@drawable/outline_123_24"
+        android:title="Números"
+        android:textStyle ="italic" />
+</menu>
