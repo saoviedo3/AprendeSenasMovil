@@ -18,6 +18,5 @@
     <item
         android:id="@+id/numbersFragment"
         android:icon="@drawable/outline_123_24"
-        android:title="Números"
-        android:textStyle ="italic" />
+        android:title="Números" />
 </menu>
