@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Para ShapeableImageView -->
+    <style name="Shape.RoundImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!-- Para NavigationView itemShapeAppearanceOverlay -->
+    <style name="Shape.NavItemRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <!-- Alias para cubrir cualquier @style/Shape que exista en layouts antiguos -->
+    <style name="Shape" parent="Shape.RoundImage"/>
+</resources>

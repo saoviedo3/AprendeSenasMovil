@@ -17,13 +17,14 @@
         <ImageView
             android:id="@+id/bgImageLetters"
             android:layout_width="match_parent"
-            android:layout_height="730dp"
+            android:layout_height="0dp"
             android:scaleType="centerCrop"
             android:src="@drawable/background_home"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     <View
         android:id="@+id/darkOverlayLetters"
@@ -41,15 +42,13 @@
         android:id="@+id/tvTitle1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ABECEDARIO"
+        android:text="ABECEDARIO EN LENGUA DE SEÑAS ECUADOR"
         android:textAlignment="center"
         android:textAppearance="?attr/textAppearanceHeadline6"
         android:textColor="@color/white"
         android:textSize="26sp"
         android:textStyle="italic|bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="28dp" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tvSubtitle1"
@@ -63,8 +62,7 @@
         android:textSize="20sp"
         android:textStyle="italic|bold"
         app:layout_constraintTop_toBottomOf="@id/tvTitle1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="7dp" />
+        tools:ignore="MissingConstraints"/>
 
     <GridLayout
         android:layout_width="match_parent"
@@ -73,12 +71,11 @@
         android:columnCount="3"
         android:rowCount="9"
         app:layout_constraintTop_toBottomOf="@id/tvSubtitle1"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="17dp">
+        tools:ignore="MissingConstraints">
 
         <Button
             android:id="@+id/btnA"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -86,7 +83,7 @@
 
         <Button
             android:id="@+id/btnB"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -94,7 +91,7 @@
 
         <Button
             android:id="@+id/btnC"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -102,7 +99,7 @@
 
         <Button
             android:id="@+id/btnCH"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -110,7 +107,7 @@
 
         <Button
             android:id="@+id/btnD"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -118,7 +115,7 @@
 
         <Button
             android:id="@+id/btnE"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -126,7 +123,7 @@
 
         <Button
             android:id="@+id/btnF"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -134,7 +131,7 @@
 
         <Button
             android:id="@+id/btnG"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -142,7 +139,7 @@
 
         <Button
             android:id="@+id/btnH"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -150,7 +147,7 @@
 
         <Button
             android:id="@+id/btnI"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -158,7 +155,7 @@
 
         <Button
             android:id="@+id/btnK"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -166,7 +163,7 @@
 
         <Button
             android:id="@+id/btnL"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -174,7 +171,7 @@
 
         <Button
             android:id="@+id/btnM"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -182,7 +179,7 @@
 
         <Button
             android:id="@+id/btnN"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -190,7 +187,7 @@
 
         <Button
             android:id="@+id/btnO"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -198,7 +195,7 @@
 
         <Button
             android:id="@+id/btnP"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -206,7 +203,7 @@
 
         <Button
             android:id="@+id/btnQ"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -214,7 +211,7 @@
 
         <Button
             android:id="@+id/btnR"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -222,7 +219,7 @@
 
         <Button
             android:id="@+id/btnS"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -230,7 +227,7 @@
 
         <Button
             android:id="@+id/btnT"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -238,7 +235,7 @@
 
         <Button
             android:id="@+id/btnU"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -246,7 +243,7 @@
 
         <Button
             android:id="@+id/btnV"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -254,7 +251,7 @@
 
         <Button
             android:id="@+id/btnW"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -262,7 +259,7 @@
 
         <Button
             android:id="@+id/btnX"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -270,7 +267,7 @@
 
         <Button
             android:id="@+id/btnY"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"

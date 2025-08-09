@@ -42,24 +42,21 @@
         android:textColor="@color/white"
         android:textSize="26sp"
         android:textStyle="italic|bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="28dp" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tvSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:text="Contando en Señas"
+        android:text="Explora los Números: Aprende, Conecta, Descubre."
         android:textAlignment="center"
         android:textAppearance="?attr/textAppearanceHeadline6"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="italic|bold"
         app:layout_constraintTop_toBottomOf="@id/tvTitleNumber"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="7dp" />
+        tools:ignore="MissingConstraints" />
 
     <GridLayout
         android:layout_width="match_parent"
@@ -68,12 +65,11 @@
         android:columnCount="3"
         android:rowCount="3"
         app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="17dp">
+        tools:ignore="MissingConstraints">
 
         <Button
             android:id="@+id/btn1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -81,7 +77,7 @@
 
         <Button
             android:id="@+id/btn2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -89,7 +85,7 @@
 
         <Button
             android:id="@+id/btn3"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -97,7 +93,7 @@
 
         <Button
             android:id="@+id/btn4"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -105,7 +101,7 @@
 
         <Button
             android:id="@+id/btn5"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -113,7 +109,7 @@
 
         <Button
             android:id="@+id/btn6"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -121,7 +117,7 @@
 
         <Button
             android:id="@+id/btn7"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -129,7 +125,7 @@
 
         <Button
             android:id="@+id/btn8"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
@@ -137,11 +133,11 @@
 
         <Button
             android:id="@+id/btn9"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:backgroundTint="@color/colorDrawerBackground"
-            android:text="9" />
+            android:text="9"/>
 
     </GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

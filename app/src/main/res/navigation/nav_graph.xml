@@ -30,7 +30,7 @@
     <fragment
         android:id="@+id/numbersFragment"
         android:name="com.espe.aprendesenasv1.ui.NumbersFragment"
-        android:label="Numeros"
+        android:label="Números"
         tools:layout="@layout/fragment_numbers">
         <action
             android:id="@+id/action_letters_to_detection"

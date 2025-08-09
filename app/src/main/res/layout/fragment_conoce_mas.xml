@@ -1,191 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fillViewport="true"
-    android:background="@android:color/black">
+    android:background="@android:color/black"
+    android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/black">
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp">
 
-        <!-- Título -->
+        <!-- Título principal -->
         <TextView
             android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lengua de Señas: Un puente de comunicación"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="24sp"
-            android:textStyle="italic|bold"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="0.1"/>
-
-        <!-- Contenido de la sección -->
-        <TextView
-            android:id="@+id/tvContent1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pérdida de audición en El Mundo, América y Ecuador"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="italic|bold"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"
-            app:layout_constraintVertical_bias="0.2"/>
-
-        <ImageView
-            android:id="@+id/ivImage1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/imagen1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvContent1" />
-
-        <!-- Contenido de la sección -->
-        <TextView
-            android:id="@+id/tvContent2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="96dp"
-            android:text="Actualmente, más de 1500 millones de personas sufren pérdida auditiva. Se estima que alrededor de 430 millones a nivel mundial tienen una pérdida de audición grave moderada o mayor en el oído con mejor audición. En Ecuador, según la Conadis (Consejo Nacional para la igualdad de Discapacidades), hay 471205 mil personas con alguna discapacidad, de este total, el 66.538% son personas con discapacidad auditiva."
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivImage1" />
-
-        <TextView
-            android:id="@+id/tvContent3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pérdida de audición"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="italic|bold"
-            app:layout_constraintTop_toBottomOf="@id/tvContent2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp" />
-
-        <ImageView
-            android:id="@+id/ivImage2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/imagen2"
-            android:scaleType="fitCenter"
-            app:layout_constraintTop_toBottomOf="@id/tvContent3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"/>
-
-        <TextView
-            android:id="@+id/tvContent4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="La pérdida de audición es cuando una persona no es capaz de oír adecuadamente como una persona cuyo oído es normal. Las causas pueden ser congénitas, hereditarias o genéticas, y esta pérdida puede afectar a uno o ambos oídos."
+            android:text="Lengua de Señas: Un puente de comunicación"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="italic"
-            app:layout_constraintTop_toBottomOf="@id/ivImage2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp" />
-
-        <!-- Contenido de la sección -->
-        <TextView
-            android:id="@+id/tvContent5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lengua de Señas Ecuatoriana (LSEC)"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="italic|bold"
-            app:layout_constraintTop_toBottomOf="@id/tvContent4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"/>
+            android:textStyle="bold"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.02"
+            android:lineSpacingExtra="2dp"
+            android:layout_marginBottom="16dp"
+            android:textSize="24sp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="18sp"
+            app:autoSizeMaxTextSize="24sp"
+            app:autoSizeStepGranularity="1sp"
+            tools:ignore="SmallSp" />
 
-        <ImageView
-            android:id="@+id/ivImage3"
-            android:layout_width="345dp"
-            android:layout_height="186dp"
-            android:src="@drawable/imagen3"
-            android:scaleType="fitCenter"
-            app:layout_constraintTop_toBottomOf="@id/tvContent5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp" />
-
-        <TextView
-            android:id="@+id/tvContent6"
-            android:layout_width="wrap_content"
+        <!-- ===== Sección 1 ===== -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="La lengua de señas en Ecuador se conoce hoy como Lengua de Señas Ecuatoriana (LSEC). En 1986 se fundó la Federación Nacional de Sordos de Ecuador (FENASEC) y en 2012 se publica el Diccionario Oficial de Lengua de Señas Ecuatoriana."
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="italic"
-            app:layout_constraintTop_toBottomOf="@id/ivImage3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp" />
+            android:layout_marginBottom="16dp"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="16dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#22FFFFFF"
+            app:cardBackgroundColor="#111111">
 
-        <!-- Contenido de la sección -->
-        <TextView
-            android:id="@+id/tvContent7"
-            android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvContent1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Pérdida de audición en el mundo, América y Ecuador"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:includeFontPadding="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivImage1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="12dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/imagen1"
+                    android:contentDescription="Mapa de pérdida de audición"
+                    app:layout_constraintTop_toBottomOf="@id/tvContent1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintDimensionRatio="16:9"
+                    app:shapeAppearanceOverlay="@style/Shape.RoundImage"
+                    app:strokeColor="#22FFFFFF"
+                    app:strokeWidth="1dp"/>
+
+                <TextView
+                    android:id="@+id/tvContent2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Actualmente, más de 1.500 millones de personas sufren pérdida auditiva. Se estima que alrededor de 430 millones a nivel mundial tienen pérdida moderada o mayor en el oído con mejor audición. En Ecuador, según el CONADIS, hay 471.205 personas con alguna discapacidad; de este total, el 66,538% corresponde a discapacidad auditiva."
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="2dp"
+                    app:layout_constraintTop_toBottomOf="@id/ivImage1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_goneMarginTop="8dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===== Sección 2 ===== -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Comunicación y empleo"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="italic|bold"
-            app:layout_constraintTop_toBottomOf="@id/tvContent6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginBottom="16dp"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="16dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#22FFFFFF"
+            app:cardBackgroundColor="#111111">
 
-        <ImageView
-            android:id="@+id/ivImage4"
-            android:layout_width="345dp"
-            android:layout_height="186dp"
-            android:src="@drawable/imagen4"
-            android:scaleType="fitCenter"
-            app:layout_constraintTop_toBottomOf="@id/tvContent7"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="8dp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tvContent8"
-            android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tvContent3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Pérdida de audición"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:includeFontPadding="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivImage2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="12dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/imagen2"
+                    android:contentDescription="Ilustración sobre pérdida de audición"
+                    app:layout_constraintTop_toBottomOf="@id/tvContent3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintDimensionRatio="16:9"
+                    app:shapeAppearanceOverlay="@style/Shape.RoundImage"
+                    app:strokeColor="#22FFFFFF"
+                    app:strokeWidth="1dp"/>
+
+                <TextView
+                    android:id="@+id/tvContent4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="La pérdida de audición aparece cuando una persona no puede oír como alguien con audición normal. Las causas pueden ser congénitas, hereditarias o genéticas, y puede afectar uno o ambos oídos."
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="2dp"
+                    app:layout_constraintTop_toBottomOf="@id/ivImage2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===== Sección 3 ===== -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="El principal problema que las personas enfrentan con este tipo de discapacidad es lograr comunicarse con alguien que no hable el lenguaje de señas. Además, las personas con discapacidad auditiva tienen dificultades para conseguir empleo, por lo que apenas un 16% de la población sorda en Ecuador tiene empleo."
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="italic"
-            app:layout_constraintTop_toBottomOf="@id/ivImage4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginBottom="16dp"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="16dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#22FFFFFF"
+            app:cardBackgroundColor="#111111">
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/tvContent5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Lengua de Señas Ecuatoriana (LSEC)"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivImage3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="12dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/imagen3"
+                    android:contentDescription="Imagen relacionada con LSEC"
+                    app:layout_constraintTop_toBottomOf="@id/tvContent5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintDimensionRatio="16:9"
+                    app:shapeAppearanceOverlay="@style/Shape.RoundImage"
+                    app:strokeColor="#22FFFFFF"
+                    app:strokeWidth="1dp"/>
+
+                <TextView
+                    android:id="@+id/tvContent6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="La lengua de señas en Ecuador se conoce como LSEC. En 1986 se fundó FENASEC y en 2012 se publicó el Diccionario Oficial de LSEC."
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="2dp"
+                    app:layout_constraintTop_toBottomOf="@id/ivImage3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===== Sección 4 ===== -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="16dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#22FFFFFF"
+            app:cardBackgroundColor="#111111">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvContent7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Comunicación y empleo"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivImage4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="12dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/imagen4"
+                    android:contentDescription="Ilustración sobre comunicación y empleo"
+                    app:layout_constraintTop_toBottomOf="@id/tvContent7"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintDimensionRatio="16:9"
+                    app:shapeAppearanceOverlay="@style/Shape.RoundImage"
+                    app:strokeColor="#22FFFFFF"
+                    app:strokeWidth="1dp"/>
+
+                <TextView
+                    android:id="@+id/tvContent8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="El principal reto es comunicarse con personas que no usan lengua de señas. Además, solo ~16% de la población sorda en Ecuador tiene empleo."
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="2dp"
+                    app:layout_constraintTop_toBottomOf="@id/ivImage4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
 </androidx.core.widget.NestedScrollView>

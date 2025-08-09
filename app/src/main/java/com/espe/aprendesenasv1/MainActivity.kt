@@ -12,11 +12,14 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.appbar.MaterialToolbar
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var appBarConfig: AppBarConfiguration
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +31,9 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         // Configuración de la navegación
-        val navController = findNavController(R.id.nav_host_fragment)
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
         appBarConfig = AppBarConfiguration(
             setOf(R.id.homeFragment, R.id.lettersFragment, R.id.conoceMasFragment),
             drawerLayout
@@ -96,12 +101,10 @@ class MainActivity : AppCompatActivity() {
 
     // Configuración de navegación hacia atrás
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfig) || super.onSupportNavigateUp()
     }
 
     fun onConoceMasClick(view: View) {
-        val navController = findNavController(R.id.nav_host_fragment)
         navController.navigate(R.id.conoceMasFragment)
     }
 }
