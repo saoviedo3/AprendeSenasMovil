@@ -3,7 +3,6 @@ package com.espe.aprendesenasv1
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -35,16 +34,6 @@ class MainActivity : AppCompatActivity() {
             drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfig)
-
-        val toggle = ActionBarDrawerToggle(
-            this,
-            drawerLayout,
-            toolbar,
-            R.string.nav_open_drawer,
-            R.string.nav_close_drawer
-        )
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
 
         // Configurar el Listener del NavigationView
         val navView = findViewById<NavigationView>(R.id.nav_view)

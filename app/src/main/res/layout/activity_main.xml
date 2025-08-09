@@ -24,7 +24,6 @@
                 app:title="APRENDESEÑAS"
                 app:titleTextColor="#FFFFFF"
                 android:background="#FFD600"
-                android:navigationIcon="@drawable/outline_arrow_back_24"
                 app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"/>
         </com.google.android.material.appbar.AppBarLayout>
 
