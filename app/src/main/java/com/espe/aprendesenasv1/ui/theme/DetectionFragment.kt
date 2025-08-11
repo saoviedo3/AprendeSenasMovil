@@ -34,6 +34,9 @@ class DetectionFragment : Fragment(R.layout.fragment_detection) {
     private lateinit var imgResult: ImageView
     private lateinit var graphicOverlay: GraphicOverlay
 
+    private var overlayConfiguredRotation: Int? = null
+    private val lensFacing = CameraSelector.LENS_FACING_BACK
+
     private val cameraExecutor = Executors.newSingleThreadExecutor()
     private val REQUEST_CAMERA = 1001
     private var pendingSign: String? = null
@@ -52,6 +55,9 @@ class DetectionFragment : Fragment(R.layout.fragment_detection) {
         view.findViewById<TextView>(R.id.tvSignTitle).text = "Letra $sign"
         val imgRef = view.findViewById<ImageView>(R.id.imgReference)
         val instr = view.findViewById<TextView>(R.id.tvInstructions)
+
+        previewView.scaleType = PreviewView.ScaleType.FILL_CENTER
+        previewView.implementationMode = PreviewView.ImplementationMode.PERFORMANCE
 
         when(sign) {
             "A" -> {
@@ -181,20 +187,20 @@ class DetectionFragment : Fragment(R.layout.fragment_detection) {
 
     // Función para mostrar el AlertDialog con las instrucciones
     private fun showInstructionsDialog() {
-        val builder = AlertDialog.Builder(requireContext())
+        val dialogView = layoutInflater.inflate(R.layout.dialog_instructions, null)
 
-        // Configuramos el título y el mensaje
-        builder.setTitle("Instrucciones")
-            .setMessage("Para realizar la seña, asegúrese de estar en un lugar con buena iluminación y un fondo blanco despejado.")
+        val dialog = androidx.appcompat.app.AlertDialog.Builder(requireContext())
+            .setView(dialogView)
+            .create()
 
-        // Agregamos el botón de Aceptar
-        builder.setPositiveButton("Aceptar") { dialog, _ ->
-            dialog.dismiss()  // Cerrar el diálogo cuando se haga clic en Aceptar
-        }
+        // Fondo de la ventana transparente para respetar las esquinas redondeadas
+        dialog.window?.setBackgroundDrawable(android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT))
 
-        // Mostrar el AlertDialog
-        val dialog = builder.create()
         dialog.show()
+
+        dialogView.findViewById<Button>(R.id.btnOk).setOnClickListener {
+            dialog.dismiss()
+        }
     }
 
     override fun onRequestPermissionsResult(
@@ -218,6 +224,11 @@ class DetectionFragment : Fragment(R.layout.fragment_detection) {
     }
 
     private fun startCamera(targetSign: String) {
+
+        val cameraSelector = CameraSelector.Builder()
+            .requireLensFacing(lensFacing)
+            .build()
+
         val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
         cameraProviderFuture.addListener({
             val cameraProvider = cameraProviderFuture.get()
@@ -245,15 +256,40 @@ class DetectionFragment : Fragment(R.layout.fragment_detection) {
                 .build()
                 .also { analysis ->
                     analysis.setAnalyzer(cameraExecutor) { imageProxy ->
+
+                        val rotation = imageProxy.imageInfo.rotationDegrees
+                        val needConfig = overlayConfiguredRotation != rotation ||
+                                graphicOverlay.width == 0 || graphicOverlay.height == 0
+
+                        if (needConfig) {
+                            val isFlipped = (lensFacing == CameraSelector.LENS_FACING_FRONT)
+
+                            // Cuando hay rotación 90/270, ancho y alto vienen invertidos
+                            if (rotation == 0 || rotation == 180) {
+                                graphicOverlay.setImageSourceInfo(
+                                    imageProxy.width,  // width del frame
+                                    imageProxy.height, // height del frame
+                                    isFlipped
+                                )
+                            } else {
+                                graphicOverlay.setImageSourceInfo(
+                                    imageProxy.height, // swap
+                                    imageProxy.width,
+                                    isFlipped
+                                )
+                            }
+                            overlayConfiguredRotation = rotation
+                        }
+
                         processImageProxy(detector, imageProxy, targetSign)
                     }
                 }
-
+            overlayConfiguredRotation = null
             // 4) Bind
             cameraProvider.unbindAll()
             cameraProvider.bindToLifecycle(
                 viewLifecycleOwner,
-                CameraSelector.DEFAULT_BACK_CAMERA,
+                cameraSelector,
                 preview,
                 imageAnalysis
             )

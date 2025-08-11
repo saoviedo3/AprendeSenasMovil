@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp"
         android:background="@color/black">
 
         <ImageView
@@ -20,7 +19,6 @@
             android:layout_height="0dp"
             android:scaleType="centerCrop"
             android:src="@drawable/background_home"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -48,19 +46,38 @@
         android:textColor="@color/white"
         android:textSize="26sp"
         android:textStyle="italic|bold"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tvSubtitle1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:text="Explora el Abecedario: Aprende, Conecta, Descubre."
         android:textAlignment="center"
-        android:textAppearance="?attr/textAppearanceHeadline6"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="italic|bold"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="2dp"
+        android:maxWidth="720dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/text_scrim_round"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:shadowColor="#99000000"
+        android:shadowDx="0"
+        android:shadowDy="1"
+        android:shadowRadius="4"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="14sp"
+        app:autoSizeMaxTextSize="20sp"
+        app:autoSizeStepGranularity="1sp"
         app:layout_constraintTop_toBottomOf="@id/tvTitle1"
         tools:ignore="MissingConstraints"/>
 
@@ -68,6 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
+        android:padding="16dp"
         android:columnCount="3"
         android:rowCount="9"
         app:layout_constraintTop_toBottomOf="@id/tvSubtitle1"
@@ -78,7 +96,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="A" />
 
         <Button
@@ -86,7 +104,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="B" />
 
         <Button
@@ -94,7 +112,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="C" />
 
         <Button
@@ -102,7 +120,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="CH" />
 
         <Button
@@ -110,7 +128,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="D" />
 
         <Button
@@ -118,7 +136,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="E" />
 
         <Button
@@ -126,7 +144,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="F" />
 
         <Button
@@ -134,7 +152,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="G" />
 
         <Button
@@ -142,7 +160,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="H" />
 
         <Button
@@ -150,7 +168,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="I" />
 
         <Button
@@ -158,7 +176,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="K" />
 
         <Button
@@ -166,7 +184,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="L" />
 
         <Button
@@ -174,7 +192,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="M" />
 
         <Button
@@ -182,7 +200,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="N" />
 
         <Button
@@ -190,7 +208,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="O" />
 
         <Button
@@ -198,7 +216,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="P" />
 
         <Button
@@ -206,7 +224,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="Q" />
 
         <Button
@@ -214,7 +232,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="R" />
 
         <Button
@@ -222,7 +240,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="S" />
 
         <Button
@@ -230,7 +248,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="T" />
 
         <Button
@@ -238,7 +256,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="U" />
 
         <Button
@@ -246,7 +264,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="V" />
 
         <Button
@@ -254,7 +272,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="W" />
 
         <Button
@@ -262,7 +280,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="X" />
 
         <Button
@@ -270,7 +288,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:backgroundTint="@color/colorDrawerBackground"
+            android:backgroundTint="#FFD600"
             android:text="Y" />
     </GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

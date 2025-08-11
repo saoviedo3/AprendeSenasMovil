@@ -11,10 +11,10 @@ object ModelSelector {
             "P", "Q", "R" -> "model_pqr.tflite"
             "S", "T", "U" -> "model_stu.tflite"
             "V", "W", "X" -> "model_vwx.tflite"
-            "Y", "1", "2" -> "model_y12.tflite"
-            "3", "4", "5" -> "model_345.tflite"
-            "6", "7", "8" -> "model_678.tflite"
-            "9" -> "model_9.tflite"
+            "Y" -> "model_y.tflite"
+            "1", "2", "3" -> "model_123.tflite"
+            "4", "5", "6" -> "model_456.tflite"
+            "7", "8", "9" -> "model_789.tflite"
             else -> "model_meta.tflite"
         }
     }

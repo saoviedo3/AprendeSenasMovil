@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/drawer_background"
+    android:fitsSystemWindows="true"
+    android:paddingTop="@dimen/drawer_header_top"
+    android:paddingBottom="16dp"
+    android:paddingEnd="16dp"
+    android:paddingStart="32dp">
+
+    <ImageView
+        android:id="@+id/headerLogoImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitStart"
+        android:src="@drawable/logo_header_dark"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+    android:id="@+id/headerSubtitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Lengua de Señas Ecuatoriana"
+    android:textColor="#99FFFFFF"
+    android:textSize="12sp"
+    android:layout_marginTop="2dp"/>
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="3dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="#FFD600"/>
+
+</LinearLayout>

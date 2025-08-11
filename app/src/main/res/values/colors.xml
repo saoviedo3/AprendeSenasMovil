@@ -10,4 +10,8 @@
     <color name="colorDrawerBackground">#f7dc6f</color>
     <color name="colorMenuItemIcon">#FFD600</color>
     <color name="colorMenuItemText">#FFFFFF</color>
+    <color name="drawer_background">#111111</color>
+    <color name="ic_launcher_background">#FFD600</color>
+
+
 </resources>

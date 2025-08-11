@@ -1,95 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fillViewport="true"
-    android:background="@android:color/black">
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!-- Fondo -->
+    <ImageView
+        android:id="@+id/bgImageNumbersDetect"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/black">
+        android:layout_height="match_parent"
+        android:src="@drawable/background_home"
+        android:scaleType="centerCrop"
+        android:contentDescription="@null"
+        android:importantForAccessibility="no" />
 
-        <TextView
-            android:id="@+id/tvSignTitleNumber"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
+    <!-- Scrim para contraste -->
+    <View
+        android:id="@+id/darkOverlayNumbersDetect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000" />
+
+    <!-- CONTENIDO ORIGINAL (sin cambiar IDs) -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@android:color/transparent">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp">
 
-        <ImageView
-            android:id="@+id/imgReference"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="MissingConstraints"
-            android:contentDescription="Referencia de seña"
-            app:layout_constraintTop_toBottomOf="@id/tvSignTitleNumber"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <TextView
-            android:id="@+id/tvInstructions"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="MissingConstraints"
-            android:textColor="@android:color/white"
-            app:layout_constraintTop_toBottomOf="@id/imgReference"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <Button
-            android:id="@+id/btnTry"
-            android:layout_marginTop="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFD600"
-            android:textColor="#FFF"
-            tools:ignore="MissingConstraints"
-            android:text="Intentalo tu mismo!"
-            app:layout_constraintTop_toBottomOf="@id/tvInstructions"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="350dp"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintTop_toBottomOf="@id/btnTry"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <!-- Vista de Cámara -->
-            <androidx.camera.view.PreviewView
-                android:id="@+id/previewView"
+            <TextView
+                android:id="@+id/tvSignTitleNumber"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginBottom="16dp"
+                tools:text="Número: 1" />
 
-            <!-- Dibujo de bounding-boxes -->
-            <com.example.mlkitobjectdetection.GraphicOverlay
-                android:id="@+id/graphicOverlay"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="815dp" />
-        </FrameLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#22FFFFFF"
+                app:cardBackgroundColor="#111111">
 
-        <ImageView
-            android:id="@+id/imgResult"
-            android:layout_gravity="center"
-            android:layout_marginTop="8dp"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            tools:ignore="MissingConstraints"
-            android:visibility="gone"
-            android:src="@drawable/ic_check"
-            app:layout_constraintTop_toBottomOf="@id/btnTry"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/imgReference"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:contentDescription="Referencia de seña"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintDimensionRatio="W,1:1" />
+
+                    <TextView
+                        android:id="@+id/tvInstructions"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:lineSpacingExtra="2dp"
+                        app:layout_constraintTop_toBottomOf="@id/imgReference"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:text="Coloca la mano como en la imagen y mantén la postura." />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:id="@+id/btnTry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Intentalo tu mismo!"
+                android:textAllCaps="false"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:backgroundTint="#FFD600"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="16dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#22FFFFFF"
+                app:cardBackgroundColor="#111111">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp">
+
+                    <androidx.camera.view.PreviewView
+                        android:id="@+id/previewView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.example.mlkitobjectdetection.GraphicOverlay
+                        android:id="@+id/graphicOverlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <ImageView
+                        android:id="@+id/imgResult"
+                        android:layout_width="126dp"
+                        android:layout_height="126dp"
+                        android:layout_gravity="center"
+                        android:translationY="-106dp"
+                        android:visibility="gone"
+                        android:elevation="8dp"
+                        android:src="@drawable/ic_check" />
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

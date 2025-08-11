@@ -15,4 +15,32 @@
 
     <!-- Alias para cubrir cualquier @style/Shape que exista en layouts antiguos -->
     <style name="Shape" parent="Shape.RoundImage"/>
+
+
+    <style name="BottomNav.ActiveIndicator" parent="">
+        <!-- Color del pill activo (acento con transparencia) -->
+        <item name="android:color">#33FFD600</item>
+        <!-- Bordes redondeados -->
+        <item name="shapeAppearanceOverlay">@style/Shape.BottomNav.Indicator</item>
+    </style>
+
+    <style name="Shape.BottomNav.Indicator" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="Widget.App.NavigationView" parent="Widget.MaterialComponents.NavigationView">
+        <item name="itemIconTint">@color/drawer_item_color</item>
+        <item name="itemTextColor">@color/drawer_item_color</item>
+        <item name="itemBackground">@drawable/drawer_item_bg</item>
+
+        <!-- Padding y tamaño de íconos -->
+        <item name="itemIconSize">24dp</item>
+        <item name="itemIconPadding">8dp</item>
+
+
+        <item name="itemShapeAppearanceOverlay">@style/Shape.NavItemRounded</item>
+    </style>
+
+
 </resources>

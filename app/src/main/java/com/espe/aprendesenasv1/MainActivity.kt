@@ -16,6 +16,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.navigation.NavigationView
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var appBarConfig: AppBarConfiguration
@@ -29,16 +30,36 @@ class MainActivity : AppCompatActivity() {
         // Toolbar
         val toolbar: MaterialToolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+        toolbar.contentInsetStartWithNavigation = 0
+        toolbar.setContentInsetsRelative(0, 0)
+        toolbar.setContentInsetsAbsolute(0, 0)
 
         // Configuración de la navegación
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
         appBarConfig = AppBarConfiguration(
-            setOf(R.id.homeFragment, R.id.lettersFragment, R.id.conoceMasFragment),
+            setOf(
+                R.id.homeFragment,
+                R.id.lettersFragment,
+                R.id.numbersFragment,
+                R.id.conoceMasFragment
+            ),
             drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfig)
+
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        toolbar.title = ""
+        toolbar.subtitle = null
+
+        // Por si NavigationUI lo vuelve a poner al cambiar de destino
+        navController.addOnDestinationChangedListener { _, _, _ ->
+            supportActionBar?.setDisplayShowTitleEnabled(false)
+            toolbar.title = ""
+            toolbar.subtitle = null
+
+        }
 
         // Configurar el Listener del NavigationView
         val navView = findViewById<NavigationView>(R.id.nav_view)

@@ -2,47 +2,33 @@ package com.example.mlkitobjectdetection
 
 import android.content.Context
 import android.graphics.Canvas
-import android.graphics.Matrix
 import android.util.AttributeSet
 import android.view.View
-import com.example.mlkitobjectdetection.GraphicOverlay.Graphic
 
+open class GraphicOverlay(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
 
-open class GraphicOverlay(context: Context?, attrs: AttributeSet?) :
-    View(context, attrs) {
     private val lock = Any()
     private val graphics: MutableList<Graphic> = ArrayList()
-    private val transformationMatrix = Matrix()
+
+    // Tamaño real del frame de cámara
     var imageWidth = 0
         private set
     var imageHeight = 0
         private set
-    private var scaleFactor = 1.0f
-    private var postScaleWidthOffset = 0f
-    private var postScaleHeightOffset = 0f
+
+    // Factores de escala y offsets (para escalar coordenadas del frame al overlay)
+    private var widthScaleFactor = 1f
+    private var heightScaleFactor = 1f
     private var isImageFlipped = false
-    private var needUpdateTransformation = true
 
     abstract class Graphic(private val overlay: GraphicOverlay) {
-
         abstract fun draw(canvas: Canvas)
 
-        fun scale(imagePixel: Float): Float {
-            return imagePixel * overlay.scaleFactor
-        }
-
-        fun translateX(x: Float): Float {
-            return if (overlay.isImageFlipped) {
-                overlay.width - (scale(x) - overlay.postScaleWidthOffset)
-            } else {
-                scale(x) - overlay.postScaleWidthOffset
-            }
-        }
-
-        fun translateY(y: Float): Float {
-            return scale(y) - overlay.postScaleHeightOffset
-        }
-
+        // Helpers: SIEMPRE usar los métodos públicos del overlay
+        fun translateX(x: Float): Float = overlay.translateX(x)
+        fun translateY(y: Float): Float = overlay.translateY(y)
+        fun scaleX(v: Float): Float = overlay.scaleX(v)
+        fun scaleY(v: Float): Float = overlay.scaleY(v)
     }
 
     fun clear() {
@@ -52,52 +38,49 @@ open class GraphicOverlay(context: Context?, attrs: AttributeSet?) :
 
     fun add(graphic: Graphic) {
         synchronized(lock) { graphics.add(graphic) }
-    }
-
-    fun setImageSourceInfo(imageWidth: Int, imageHeight: Int, isFlipped: Boolean) {
-        synchronized(lock) {
-            this.imageWidth = imageWidth
-            this.imageHeight = imageHeight
-            isImageFlipped = isFlipped
-            needUpdateTransformation = true
-        }
         postInvalidate()
     }
 
-    private fun updateTransformationIfNeeded() {
-        if (!needUpdateTransformation || imageWidth <= 0 || imageHeight <= 0) {
-            return
-        }
-        val viewAspectRatio = width.toFloat() / height
-        val imageAspectRatio = imageWidth.toFloat() / imageHeight
-        postScaleWidthOffset = 0f
-        postScaleHeightOffset = 0f
-        if (viewAspectRatio > imageAspectRatio) {
-            scaleFactor = width.toFloat() / imageWidth
-            postScaleHeightOffset = (width.toFloat() / imageAspectRatio - height) / 2
-        } else {
-            scaleFactor = height.toFloat() / imageHeight
-            postScaleWidthOffset = (height.toFloat() * imageAspectRatio - width) / 2
-        }
-        transformationMatrix.reset()
-        transformationMatrix.setScale(scaleFactor, scaleFactor)
-        transformationMatrix.postTranslate(-postScaleWidthOffset, -postScaleHeightOffset)
-        if (isImageFlipped) {
-            transformationMatrix.postScale(-1f, 1f, width / 2f, height / 2f)
-        }
-        needUpdateTransformation = false
+    /**
+     * Llama esto cada vez que cambia la rotación o el tamaño del frame
+     * (ya lo haces desde DetectionFragment).
+     */
+    fun setImageSourceInfo(imageWidth: Int, imageHeight: Int, isFlipped: Boolean) {
+        this.imageWidth = imageWidth
+        this.imageHeight = imageHeight
+        this.isImageFlipped = isFlipped
+        updateScaleFactors()
+        postInvalidate()
     }
+
+    // Recalcula escalas cuando ya tenemos el tamaño del overlay
+    private fun updateScaleFactors() {
+        if (imageWidth > 0 && imageHeight > 0 && width > 0 && height > 0) {
+            widthScaleFactor  = width  * 1f / imageWidth
+            heightScaleFactor = height * 1f / imageHeight
+        }
+    }
+
+    // Si cambia el tamaño del overlay (rotación, split-screen, etc.)
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        updateScaleFactors()
+    }
+
+    // Métodos públicos que usa Graphic para convertir coordenadas
+    fun translateX(x: Float): Float {
+        val scaledX = x * widthScaleFactor
+        return if (isImageFlipped) width - scaledX else scaledX
+    }
+
+    fun translateY(y: Float): Float = y * heightScaleFactor
+    fun scaleX(v: Float): Float = v * widthScaleFactor
+    fun scaleY(v: Float): Float = v * heightScaleFactor
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         synchronized(lock) {
-            updateTransformationIfNeeded()
-            for (graphic in graphics) {
-                graphic.draw(canvas)
-            }
+            for (g in graphics) g.draw(canvas)
         }
     }
-
-
-
 }
