@@ -19,3 +19,22 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+
+# ==== ML Kit (vision / objetos) ====
+-keep class com.google.mlkit.** { *; }
+-dontwarn com.google.mlkit.**
+
+# GMS internos usados por ML Kit (evita warnings)
+-keep class com.google.android.gms.internal.mlkit_vision_** { *; }
+-dontwarn com.google.android.gms.internal.mlkit_vision_**
+
+# CameraX
+-keep class androidx.camera.** { *; }
+-dontwarn androidx.camera.**
+
+# Tu app (no obfusques nombres públicos si accedes por reflexión)
+-keep class com.espe.aprendesenasv1.** { *; }
+
+# Mantener anotaciones/reflexión
+-keepattributes *Annotation*

@@ -96,7 +96,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintDimensionRatio="16:9"
-                    app:shapeAppearanceOverlay="@style/Shape.RoundImage"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.App.RoundedMedium"
                     app:strokeColor="#22FFFFFF"
                     app:strokeWidth="1dp"/>
 
@@ -158,7 +158,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintDimensionRatio="16:9"
-                    app:shapeAppearanceOverlay="@style/Shape.RoundImage"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.App.RoundedMedium"
                     app:strokeColor="#22FFFFFF"
                     app:strokeWidth="1dp"/>
 
@@ -218,7 +218,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintDimensionRatio="16:9"
-                    app:shapeAppearanceOverlay="@style/Shape.RoundImage"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.App.RoundedMedium"
                     app:strokeColor="#22FFFFFF"
                     app:strokeWidth="1dp"/>
 
@@ -277,7 +277,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintDimensionRatio="16:9"
-                    app:shapeAppearanceOverlay="@style/Shape.RoundImage"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.App.RoundedMedium"
                     app:strokeColor="#22FFFFFF"
                     app:strokeWidth="1dp"/>
 

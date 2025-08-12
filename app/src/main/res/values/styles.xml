@@ -1,46 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Para ShapeableImageView -->
-    <style name="Shape.RoundImage">
+    <!-- Overlay de esquinas 16dp para imágenes (ShapeableImageView) -->
+    <style name="ShapeAppearance.App.RoundedMedium"
+        parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">16dp</item>
     </style>
 
-    <!-- Para NavigationView itemShapeAppearanceOverlay -->
-    <style name="Shape.NavItemRounded">
+    <!-- Overlay de esquinas 12dp para items del NavigationView -->
+    <style name="ShapeAppearance.App.RoundedSmall"
+        parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">12dp</item>
     </style>
 
-    <!-- Alias para cubrir cualquier @style/Shape que exista en layouts antiguos -->
-    <style name="Shape" parent="Shape.RoundImage"/>
-
-
-    <style name="BottomNav.ActiveIndicator" parent="">
-        <!-- Color del pill activo (acento con transparencia) -->
-        <item name="android:color">#33FFD600</item>
-        <!-- Bordes redondeados -->
-        <item name="shapeAppearanceOverlay">@style/Shape.BottomNav.Indicator</item>
-    </style>
-
-    <style name="Shape.BottomNav.Indicator" parent="">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">16dp</item>
-    </style>
-
+    <!-- Estilo del NavigationView -->
     <style name="Widget.App.NavigationView" parent="Widget.MaterialComponents.NavigationView">
         <item name="itemIconTint">@color/drawer_item_color</item>
         <item name="itemTextColor">@color/drawer_item_color</item>
         <item name="itemBackground">@drawable/drawer_item_bg</item>
 
-        <!-- Padding y tamaño de íconos -->
+        <!-- Tamaño/padding de íconos -->
         <item name="itemIconSize">24dp</item>
         <item name="itemIconPadding">8dp</item>
 
-
-        <item name="itemShapeAppearanceOverlay">@style/Shape.NavItemRounded</item>
+        <!-- Bordes redondeados para cada item -->
+        <item name="itemShapeAppearanceOverlay">@style/ShapeAppearance.App.RoundedSmall</item>
     </style>
-
 
 </resources>
