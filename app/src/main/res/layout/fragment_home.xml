@@ -49,7 +49,7 @@
             android:id="@+id/tvSubtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="UN ESPACIO PARA APRENDER Y COMPARTIR LENGUA DE SEÑAS ECUADOR."
+            android:text="UN ESPACIO PARA APRENDER Y COMPARTIR LA LENGUA DE SEÑAS ECUATORIANA."
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:includeFontPadding="false"

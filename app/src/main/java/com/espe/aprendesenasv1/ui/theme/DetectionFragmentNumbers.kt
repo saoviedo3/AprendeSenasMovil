@@ -87,13 +87,22 @@ class DetectionFragmentNumbers : Fragment(R.layout.fragment_detection_number) {
         }
     }
 
+    // Función para mostrar el AlertDialog con las instrucciones
     private fun showInstructionsDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.dialog_instructions, null)
+
         val dialog = androidx.appcompat.app.AlertDialog.Builder(requireContext())
-            .setTitle("Instrucciones")
-            .setMessage("Para realizar la seña, asegúrate de estar en un lugar con buena iluminación y un fondo claro.")
-            .setPositiveButton("Aceptar") { d, _ -> d.dismiss() }
+            .setView(dialogView)
             .create()
+
+        // Fondo de la ventana transparente para respetar las esquinas redondeadas
+        dialog.window?.setBackgroundDrawable(android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT))
+
         dialog.show()
+
+        dialogView.findViewById<Button>(R.id.btnOk).setOnClickListener {
+            dialog.dismiss()
+        }
     }
 
     override fun onRequestPermissionsResult(
